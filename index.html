@@ -94,6 +94,12 @@
         context.beginPath();
         context.moveTo(x, y);
     });
+
+    canvas.addEventListener("touchmove",(e)=>{
+        e.preventDefault();
+    },{passive:false})
+
+    
     canvas.addEventListener("touchmove", (e)=>{
         if (!isDrawing) return;
         var x = e.touches[0].clientX - canvas.offsetLeft;
